@@ -1,0 +1,9 @@
+{
+  "name": "@maverick/maverick-v1",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "scripts": {},
+  "dependencies": {
+    "@openzeppelin/contracts": ">=4.1.0 <4.8.0"
+  }
+}
