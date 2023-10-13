@@ -5,5 +5,5 @@ Maverick V1 Intefaces
 
 ```
 yarn
-yarn install
+yarn build
 ```
