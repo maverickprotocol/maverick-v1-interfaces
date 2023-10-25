@@ -34,6 +34,15 @@ interface IPoolInformation {
     //callback will only require that amount of the swap to be paid.
     function calculateSwap(IPool pool, uint128 amount, bool tokenAIn, bool exactOutput, uint256 sqrtPriceLimit) external returns (uint256 returnAmount);
 
+    /// @notice calculate swap tokens for a multihop path
+    /// @param path as defined in IRouter is concatenation of [token, pool,
+    //token, pool, ...]
+    /// @param amount amount of token that is either the input if exactOutput
+    //is false or the output if exactOutput is true
+    /// @param exactOutput bool indicating whether the amount specified is the
+    //exact output amount (true)
+    function calculateMultihopSwap(bytes memory path, uint256 amount, bool exactOutput) external returns (uint256 returnAmount);
+
     /// @notice get list of bins that are active (ie have not been merged)
     /// @param pool to query
     /// @param startBinIndex index of the starting bin.  may need to paginate if the pool has many bins
