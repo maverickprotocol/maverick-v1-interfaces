@@ -1,0 +1,279 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "contract IPool",
+        "name": "pool",
+        "type": "address"
+      }
+    ],
+    "name": "activeTickLiquidity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "sqrtPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "reserveA",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "reserveB",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IPool",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "amount",
+        "type": "uint128"
+      },
+      {
+        "internalType": "bool",
+        "name": "tokenAIn",
+        "type": "bool"
+      },
+      {
+        "internalType": "bool",
+        "name": "exactOutput",
+        "type": "bool"
+      },
+      {
+        "internalType": "uint256",
+        "name": "sqrtPriceLimit",
+        "type": "uint256"
+      }
+    ],
+    "name": "calculateSwap",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "returnAmount",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IPool",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "startBinIndex",
+        "type": "uint128"
+      },
+      {
+        "internalType": "uint128",
+        "name": "endBinIndex",
+        "type": "uint128"
+      }
+    ],
+    "name": "getActiveBins",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint128",
+            "name": "id",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint8",
+            "name": "kind",
+            "type": "uint8"
+          },
+          {
+            "internalType": "int32",
+            "name": "lowerTick",
+            "type": "int32"
+          },
+          {
+            "internalType": "uint128",
+            "name": "reserveA",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "reserveB",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "mergeId",
+            "type": "uint128"
+          }
+        ],
+        "internalType": "struct IPoolInformation.BinInfo[]",
+        "name": "bins",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IPool",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "internalType": "uint128",
+        "name": "binId",
+        "type": "uint128"
+      }
+    ],
+    "name": "getBinDepth",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "depth",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IPool",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "internalType": "int32",
+        "name": "tick",
+        "type": "int32"
+      }
+    ],
+    "name": "getBinsAtTick",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "uint128",
+            "name": "reserveA",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "reserveB",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "mergeBinBalance",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "mergeId",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint128",
+            "name": "totalSupply",
+            "type": "uint128"
+          },
+          {
+            "internalType": "uint8",
+            "name": "kind",
+            "type": "uint8"
+          },
+          {
+            "internalType": "int32",
+            "name": "lowerTick",
+            "type": "int32"
+          }
+        ],
+        "internalType": "struct IPool.BinState[]",
+        "name": "bins",
+        "type": "tuple[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IPool",
+        "name": "pool",
+        "type": "address"
+      }
+    ],
+    "name": "getSqrtPrice",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "sqrtPrice",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "contract IPool",
+        "name": "pool",
+        "type": "address"
+      },
+      {
+        "internalType": "int32",
+        "name": "tick",
+        "type": "int32"
+      }
+    ],
+    "name": "tickLiquidity",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "sqrtPrice",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "liquidity",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "reserveA",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "reserveB",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  }
+]
