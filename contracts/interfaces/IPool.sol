@@ -33,7 +33,6 @@ interface IPool {
     /// @param twa the twa at the last update instant
     /// @param value the new value that was passed in at the last update
     /// @param lastTimestamp timestamp of the last update in seconds
-    /// @param lookback time in seconds
     struct TwaState {
         int96 twa;
         int96 value;
@@ -92,6 +91,8 @@ interface IPool {
     }
     /// @notice fee for pool in 18 decimal format
     function fee() external view returns (uint256);
+    /// @notice lookback in seconds in 18 decimal format
+    function lookback() external view returns (int256);
     /// @notice tickSpacing of pool where 1.0001^tickSpacing is the bin width
     function tickSpacing() external view returns (uint256);
     /// @notice address of token A
