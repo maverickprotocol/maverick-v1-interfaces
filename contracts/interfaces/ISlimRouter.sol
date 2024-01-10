@@ -5,7 +5,8 @@ import "./IFactory.sol";
 import "./IPool.sol";
 import "./IPosition.sol";
 import "./ISwapCallback.sol";
-interface ISlimRouter is ISwapCallback {
+import "./IMulticall.sol";
+interface ISlimRouter is ISwapCallback, IMulticall {
     /// @return Returns the address of the factory
     function factory() external view returns (IFactory);
     /// @return Returns the address of the Position NFT
